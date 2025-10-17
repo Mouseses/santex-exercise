@@ -28,10 +28,11 @@ jobs:
         run: chmod +x ./backend/gradlew
 
       - name: Build and Validate Code
+        working-directory: ./backend
         run: |
-          ./backend/gradlew build
-          ./backend/gradlew checkstyleMain
-          ./backend/gradlew spotlessCheck
+          ./gradlew build
+          ./gradlew checkstyleMain
+          ./gradlew spotlessCheck
 
       - name: Upload Checkstyle Report
         if: always()
@@ -55,4 +56,5 @@ jobs:
           distribution: 'temurin'
 
       - name: Generate and submit dependency graph
-        uses: gradle/actions/dependency-submission@v4
+        working-directory: ./backend
+        run: ./gradlew dependencies
