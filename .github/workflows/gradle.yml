@@ -26,9 +26,9 @@ jobs:
 
       - name: Build and Validate Code
         run: |
-          ./gradlew build
-          ./gradlew checkstyleMain
-          ./gradlew spotlessCheck
+          ./backend/gradlew build
+          ./backend/gradlew checkstyleMain
+          ./backend/gradlew spotlessCheck
 
       - name: Upload Checkstyle Report
         if: always()
