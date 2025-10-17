@@ -55,6 +55,9 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Give Gradle Wrapper execution permissions
+        run: chmod +x ./backend/gradlew
+
       - name: Generate and submit dependency graph
         working-directory: ./backend
         run: ./gradlew dependencies
