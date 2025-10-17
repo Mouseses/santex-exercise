@@ -1,0 +1,17 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:prod-db.cloudprovider.net}:${DB_PORT:5432}/onboarding
+    username: ${DB_USER:prod_user}
+    password: ${DB_PASSWORD:strong_secure_password}
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: false

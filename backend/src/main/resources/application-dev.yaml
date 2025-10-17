@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    url: jdbc:postgresql://database-qa.clowcouuywrr.us-east-2.rds.amazonaws.com:5432/onboarding_qa
+    username: dev_user
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate.default_schema: onboarding_dev
+    show-sql: true

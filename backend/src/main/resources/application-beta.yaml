@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: beta
+
+  datasource:
+    url: jdbc:postgresql://beta-db.cloudprovider.net:5432/onboarding_beta
+    username: beta_user
+    password: ${DB_PASSWORD:beta_password}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false

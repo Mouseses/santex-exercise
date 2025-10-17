@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: qa
+
+  datasource:
+    url: jdbc:postgresql://database-qa.clowcouuywrr.us-east-2.rds.amazonaws.com:5432/onboarding_qa
+    username: qa_user
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
