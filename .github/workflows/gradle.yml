@@ -31,8 +31,6 @@ jobs:
         working-directory: ./backend
         run: |
           ./gradlew build
-          ./gradlew checkstyleMain
-          ./gradlew spotlessCheck
 
       - name: Upload Checkstyle Report
         if: always()
